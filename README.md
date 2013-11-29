@@ -1,4 +1,4 @@
 adapt-contrib-blank
-===================
+==================
 
-A contributed blank component
+a simple adapt core contributed blank component
