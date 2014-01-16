@@ -6,8 +6,8 @@ module.exports = function(config) {
     // List of files or patterns to load in the browser
     files: [
         { pattern: 'src/**/*.js', included: false },
-        { pattern: 'test/spec/**/*.js', included: false },
-        'test/test-main.js'
+        { pattern: 'tests/spec/**/*.js', included: false },
+        'tests/test-main.js'
     ],
     // List of frameworks you want to use: jasmine, mocha, qunit
     frameworks: ['expect', 'mocha', 'requirejs'],
