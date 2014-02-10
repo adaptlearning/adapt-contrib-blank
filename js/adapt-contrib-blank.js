@@ -9,9 +9,18 @@ define(function(require) {
 
   var Blank = ComponentView.extend({
 
+  	events: {
+  		'inview': 'inview'
+  	},
+
     postRender: function() {
       this.setReadyStatus();
-      this.setCompletionStatus();
+    },
+
+    inview: function(event, visible) {
+    	if (visible) {
+    		this.setCompletionStatus();
+    	}
     }
 
   });

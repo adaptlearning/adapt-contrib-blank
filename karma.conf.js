@@ -5,7 +5,7 @@ module.exports = function(config) {
     basePath: '',
     // List of files or patterns to load in the browser
     files: [
-        { pattern: 'js/**/*.js', included: false },
+        { pattern: 'src/**/*.js', included: false },
         { pattern: 'tests/spec/**/*.js', included: false },
         'tests/test-main.js'
     ],
