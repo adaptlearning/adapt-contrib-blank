@@ -1,6 +1,6 @@
 {
   "name": "adapt-contrib-blank",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple core contributed blank component",
   "main": "",
   "scripts": {
@@ -16,8 +16,8 @@
     "url": "https://github.com/adaptlearning/adapt-contrib-blank/issues"
   },
   "devDependencies": {
-    "karma": "~0.10",
-    "karma-mocha": "*",
-    "karma-expect": "*"
+    "karma": "0.10",
+    "karma-mocha": "0.1.0",
+    "karma-expect": "1.1.0"
   }
 }
