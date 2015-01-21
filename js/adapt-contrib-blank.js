@@ -11,7 +11,7 @@ define(function(require) {
 
     postRender: function() {
       this.setReadyStatus();
-      this.listenTo(this.model, 'change:_isCompelte', this.removeInviewListener);
+      this.listenTo(this.model, 'change:_isComplete', this.removeInviewListener);
       this.$('.component-inner').on('inview', _.bind(this.inview, this));
     },
 
