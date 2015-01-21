@@ -35,7 +35,7 @@ define(function(require) {
 
     removeInviewListener: function(model, changeAttribute) {
       if (changeAttribute) {
-        this.$('.component-widget').off('inview');
+        this.$('.component-inner').off('inview');
       }
     }
 
