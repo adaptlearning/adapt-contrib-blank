@@ -37,6 +37,11 @@ define(function(require) {
       if (changeAttribute) {
         this.$('.component-inner').off('inview');
       }
+    },
+
+    remove: function() {
+      this.$('.component-inner').off('inview');
+      Backbone.View.prototype.remove.apply(this, arguments);
     }
 
   });
