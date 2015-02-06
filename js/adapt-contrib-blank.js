@@ -11,6 +11,7 @@ define(function(require) {
 
     postRender: function() {
       this.setReadyStatus();
+      this.listenTo(this.model, 'change:_isComplete', this.removeInviewListener);
       this.$('.component-inner').on('inview', _.bind(this.inview, this));
     },
 
@@ -26,11 +27,21 @@ define(function(require) {
             }
 
             if (this._isVisibleTop && this._isVisibleBottom) {
-                this.$('.component-inner').off('inview');
                 this.setCompletionStatus();
             }
             
         }
+    },
+
+    removeInviewListener: function(model, changeAttribute) {
+      if (changeAttribute) {
+        this.$('.component-inner').off('inview');
+      }
+    },
+
+    remove: function() {
+      this.$('.component-inner').off('inview');
+      Backbone.View.prototype.remove.apply(this, arguments);
     }
 
   });
