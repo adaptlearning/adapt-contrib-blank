@@ -10,7 +10,9 @@ define(function(require) {
 
     var Blank = ComponentView.extend({
 
+
         preRender: function() {
+            this.$el.addClass("no-state");
             // Checks to see if the blank should be reset on revisit
             this.checkIfResetOnRevisit();
         },
