@@ -13,7 +13,7 @@ This component can also be installed by adding the component to the adapt.json f
         "adapt-contrib-blank": "*"
 
 ##Usage
------
+
 Once installed, the component can be used to create a blank space within your content.
 
 For example JSON format, see [example.json](example.json) A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
