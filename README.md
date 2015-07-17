@@ -1,37 +1,51 @@
-#adapt-contrib-blank
+# adapt-contrib-blank  
 
-A simple Adapt core contributed blank component.
+**Blank** is a *presentation component* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
+
+<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/blank01.png" alt="sample blank component">  
+
+Its purpose is to maintain a blank area among other visible components. [Visit the **Blank** wiki](blank-wiki) for more information about its functionality and for explanations of key properties.   
 
 ##Installation
 
-First, be sure to install the [Adapt Command Line Interface](https://github.com/adaptlearning/adapt-cli), then from the command line run:-
+As one of Adapt's *[core components](https://github.com/adaptlearning/adapt_framework/wiki/Core-Plug-ins-in-the-Adapt-Learning-Framework#components),* **Blank** is included with the [installation of the Adapt framework](https://github.com/adaptlearning/adapt_framework/wiki/Manual-installation-of-the-Adapt-framework#installation) and the [installation of the Adapt authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-Adapt-Origin).
 
-		adapt install adapt-contrib-blank
+* If **Blank** has been uninstalled from the Adapt framework, it may be reinstalled.
+With the [Adapt CLI](https://github.com/cajones/adapt-cli) installed, run the following from the command line:  
+`adapt install adapt-contrib-blank`
 
-This component can also be installed by adding the component to the adapt.json file before running `adapt install`:
- 
-        "adapt-contrib-blank": "*"
+    Alternatively, this component can also be installed by adding the following line of code to the *adapt.json* file:  
+    `"adapt-contrib-blank": "*"`  
+    Then running the command:  
+    `adapt install`  
+    (This second method will reinstall all plug-ins listed in *adapt.json*.)  
 
-##Usage
+* If **Blank** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
+<div float align=right><a href="#top">Back to Top</a></div>
 
-Once installed, the component can be used to create a blank space within your content.
+## Settings Overview
 
-For example JSON format, see [example.json](example.json) A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
+The attributes listed below are used in *components.json* to configure **Blank**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-blank/blob/master/example.json). Visit the [**Blank** wiki](blank-wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
 
-Further settings for this component are:
+### Attributes
 
-####_component
+[**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes): These are inherited by every Adapt component. [Read more](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
 
-This value must be: `blank`
+**_component** (string): This value must be: `blank`.
 
-####_classes
+**_classes** (string): CSS class name to be applied to **Blank**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
-You can use this setting to add custom classes to your template and LESS file.
+**_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.  
+<div float align=right><a href="#top">Back to Top</a></div>
 
-##Limitations
- 
-To be completed.
+## Limitations
 
-##Browser spec
+No known limitations.   
 
-This component has been tested to the standard Adapt browser specification.
+----------------------------
+**Version number:**  2.0   <a href="https://community.adaptlearning.org/ target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
+**Framework versions:** 2.0  
+**Author / maintainer:** Adapt Core Team  
+**Accessibility support:** n/a   
+**RTL support:** n/a  
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), IE 11, IE10, IE9, IE8, IE Mobile 11, Safari for iPhone (iOS 7+8), Safari for iPad (iOS 7+8), Safari 8, Opera    
