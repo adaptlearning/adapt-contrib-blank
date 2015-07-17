@@ -4,7 +4,7 @@
 
 <img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/blank01.png" alt="sample blank component">  
 
-Its purpose is to maintain a blank area among other visible components. [Visit the **Blank** wiki](blank-wiki) for more information about its functionality and for explanations of key properties.   
+Its purpose is to maintain a blank area among other visible components. [Visit the **Blank** wiki](https://github.com/adaptlearning/adapt-contrib-blank/wiki) for more information about its functionality and for explanations of key properties.   
 
 ##Installation
 
