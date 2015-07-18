@@ -25,7 +25,7 @@ With the [Adapt CLI](https://github.com/cajones/adapt-cli) installed, run the fo
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Blank**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-blank/blob/master/example.json). Visit the [**Blank** wiki](blank-wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
+The attributes listed below are used in *components.json* to configure **Blank**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-blank/blob/master/example.json). 
 
 ### Attributes
 
