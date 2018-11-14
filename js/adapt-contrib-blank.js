@@ -1,14 +1,12 @@
-define(function(require) {
-
-    var ComponentView = require('coreViews/componentView');
-    var Adapt = require('coreJS/adapt');
+define([
+    'core/js/adapt',
+    'core/js/views/componentView'
+], function(Adapt, ComponentView) {
 
     var Blank = ComponentView.extend({
 
-
         preRender: function() {
-            this.$el.addClass("no-state");
-            // Checks to see if the blank should be reset on revisit
+            this.$el.addClass('no-state');
             this.checkIfResetOnRevisit();
         },
 
@@ -17,11 +15,9 @@ define(function(require) {
             this.setupInviewListener();
         },
 
-        // Used to check if the blank should reset on revisit
         checkIfResetOnRevisit: function() {
             var isResetOnRevisit = this.model.get('_isResetOnRevisit');
 
-            // If reset is enabled set defaults
             if (isResetOnRevisit) {
                 this.model.reset(isResetOnRevisit);
             }
@@ -29,8 +25,6 @@ define(function(require) {
 
     });
 
-    Adapt.register('blank', Blank);
-
-    return Blank;
+    return Adapt.register('blank', Blank);
 
 });
