@@ -14,7 +14,7 @@ define(function(require) {
 
         postRender: function() {
             this.setReadyStatus();
-            this.$('.component-inner').on('inview', _.bind(this.inview, this));
+            this.setupInviewListener();
         },
 
         // Used to check if the blank should reset on revisit
@@ -24,25 +24,6 @@ define(function(require) {
             // If reset is enabled set defaults
             if (isResetOnRevisit) {
                 this.model.reset(isResetOnRevisit);
-            }
-        },
-
-        inview: function(event, visible, visiblePartX, visiblePartY) {
-            if (visible) {
-                if (visiblePartY === 'top') {
-                    this._isVisibleTop = true;
-                } else if (visiblePartY === 'bottom') {
-                    this._isVisibleBottom = true;
-                } else {
-                    this._isVisibleTop = true;
-                    this._isVisibleBottom = true;
-                }
-
-                if (this._isVisibleTop && this._isVisibleBottom) {
-                    this.$('.component-inner').off('inview');
-                    this.setCompletionStatus();
-                }
-
             }
         }
 
