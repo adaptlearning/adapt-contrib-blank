@@ -12,7 +12,7 @@ define([
 
         postRender: function() {
             this.setReadyStatus();
-            this.setupInviewListener();
+            this.setupInviewCompletion();
         },
 
         checkIfResetOnRevisit: function() {
