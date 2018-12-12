@@ -6,7 +6,6 @@ define([
   var Blank = ComponentView.extend({
 
     preRender: function() {
-      this.$el.addClass('no-state');
       this.checkIfResetOnRevisit();
     },
 
