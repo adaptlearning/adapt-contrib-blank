@@ -4,8 +4,5 @@
         "_type": "component",
         "_component": "blank",
         "_classes": "",
-        "_isOptional": true,
-        "_pageLevelProgress": {
-            "_isEnabled": false
-        }
+        "_isOptional": true
     }
