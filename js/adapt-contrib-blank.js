@@ -1,5 +1,3 @@
-const { constant } = require("underscore");
-
 define([
   'core/js/adapt',
   'core/js/views/componentView',
