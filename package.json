@@ -1,10 +1,11 @@
 {
   "name": "adapt-contrib-blank",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "framework": ">=5.5",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-blank",
-  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
+  "bugs": "https://github.com/adaptlearning/adapt-contrib-blank/issues",
   "component" : "blank",
+  "targetAttribute": "_blank",
   "displayName" : "Blank",
   "description": "A simple adapt core contributed blank component",
   "main": "/js/adapt-contrib-blank.js",
