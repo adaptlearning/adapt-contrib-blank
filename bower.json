@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-blank",
-  "version": "3.2.0",
-  "framework": ">=5.5",
+  "version": "3.2.1",
+  "framework": ">=5.17.2",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-blank",
   "bugs": "https://github.com/adaptlearning/adapt-contrib-blank/issues",
   "component" : "blank",
