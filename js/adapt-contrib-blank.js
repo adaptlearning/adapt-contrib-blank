@@ -1,23 +1,8 @@
-define([
-  'core/js/adapt',
-  'core/js/views/componentView',
-  'core/js/models/componentModel'
-], function(Adapt, ComponentView, ComponentModel) {
+import Adapt from 'core/js/adapt';
+import BlankView from './blankView';
+import ComponentModel from 'core/js/models/componentModel';
 
-  class BlankView extends ComponentView {
-
-    postRender() {
-      this.setReadyStatus();
-      this.setupInviewCompletion();
-    }
-
-  }
-
-  BlankView.template = 'blank';
-
-  return Adapt.register('blank', {
-    model: ComponentModel.extend({}), // create a new class in the inheritance chain so it can be extended per component type if necessary later
-    view: BlankView
-  });
-
+export default Adapt.register('blank', {
+  model: ComponentModel.extend({}), // create a new class in the inheritance chain so it can be extended per component type if necessary later
+  view: BlankView
 });
