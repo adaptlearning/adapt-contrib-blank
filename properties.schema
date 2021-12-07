@@ -10,6 +10,6 @@
       "enum": ["full-width", "half-width", "both"],
       "default": "both",
       "editorOnly": true
-    },
+    }
   }
 }
