@@ -2,282 +2,185 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
-  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "$ref": "http://localhost/system/trackedObject.schema",
   "properties": {
-    "_supportedLayout": {
-      "type": "string",
+    "_componentType": {
+      "type": "objectid",
       "required": true,
-      "enum": ["full-width", "half-width", "both"],
-      "default": "full-width",
+      "ref": "componenttype",
       "editorOnly": true
     },
-    "instruction": {
+    "_type": {
       "type": "string",
-      "required": false,
+      "id": "http://jsonschema.net/_type"
+    },
+    "_component": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "_layout": {
+      "type": "string"
+    },
+    "_classes": {
+      "type": "string",
       "default": "",
+      "isSetting": true,
       "inputType": "Text",
       "validators": [],
-      "translatable": true
+      "title": "Classes",
+      "help": "Used to style or manipulate the look and feel of this Component. These are predefined in the theme or added in Project Settings > Custom CSS/Less code."
     },
-    "_setCompletionOn": {
+    "_isOptional": {
+      "type": "boolean",
+      "default": false,
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is this optional?",
+      "help": "An optional component does not have to be completed by the user."
+    },
+    "_isAvailable": {
+      "type": "boolean",
+      "default": true,
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is this available?",
+      "help": "Controls whether this component is available in the course or not."
+    },
+    "_isHidden": {
+      "type": "boolean",
+      "default": false,
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is this hidden?",
+      "help": "Enabling this is equivalent to applying the CSS 'display:none' to the component."
+    },
+    "_isVisible": {
+      "type": "boolean",
+      "default": true,
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is this visible?",
+      "help": "Disabling this is equivalent to applying the CSS 'visibility:hidden' to the component."
+    },
+    "_isResetOnRevisit": {
       "type": "string",
-      "required": false,
-      "default": "allItems",
-      "title": "Set completion on:",
-      "enum": ["inview", "allItems"],
+      "default": "false",
+      "isSetting": true,
       "inputType": {
         "type": "Select",
-        "options": ["inview", "allItems"]
+        "options": [
+          "false",
+          "soft",
+          "hard"
+        ]
       },
-      "validators": [],
-      "help": "Whether completion is based on the learner having viewed all the items - or just having viewed the component"
+      "title": "Reset when revisited?",
+      "help": "Controls whether this component will be reset when the learner leaves the page then returns to it. The 'soft' setting will reset the component to allow the learner to attempt it again, but will not require them to do so; whereas the 'hard' setting will require them to do so. The default (false) will not cause the component to be reset.",
+      "validators": []
     },
-    "_graphic": {
+    "_ariaLevel": {
+      "type": "number",
+      "default": 0,
+      "isSetting": true,
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "If you need to override the default component ARIA level (as defined in Configuration Settings), set this to any number greater than 0."
+    },
+    "_disableAccessibilityState": {
+      "type": "boolean",
+      "default": false,
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is the accessibility state disabled?",
+      "help": "Controls whether the user can tab to a hidden label that describes the completion state of the component"
+    },
+    "_parentId": {
+      "type": "objectid",
+      "required": true
+    },
+    "_courseId": {
+      "type": "objectid",
+      "required": true,
+      "editorOnly": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "New Component Title",
+      "inputType": "Text",
+      "validators": ["required"],
+      "translatable": true
+    },
+    "displayTitle": {
+      "type": "string",
+      "required": false,
+      "default": "New Component Title",
+      "inputType": "DisplayTitle",
+      "validators": [],
+      "help": "When viewing a component - this is the title that will be displayed",
+      "translatable": true
+    },
+    "body":{
+      "type": "string",
+      "default" : "",
+      "inputType": "TextArea",
+      "validators": [],
+      "translatable": true
+    },
+    "_onScreen": {
       "type": "object",
-      "required": false,
-      "title": "Main hotgraphic",
+      "title": "On-screen classes",
+      "help": "These settings allow you to attach classes to the component when it is within the browser's viewport; helpful for running CSS-based animations on components as they scroll into view.",
       "properties": {
-        "src": {
-          "type": "string",
-          "required": false,
-          "default": "",
-          "inputType": "Asset:image",
+        "_isEnabled": {
+          "type": "boolean",
+          "default": false,
+          "isSetting": true,
+          "inputType": "Checkbox",
           "validators": [],
-          "help": "This is the image that appears behind the pins"
+          "title": "Enabled?"
         },
-        "alt": {
+        "_classes": {
           "type": "string",
-          "required": false,
-          "title": "Alternative text",
           "default": "",
+          "isSetting": true,
+          "required": false,
           "inputType": "Text",
           "validators": [],
-          "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
-          "translatable": true
+          "title": "Classes",
+          "help": "The CSS class(es) to add to the component element."
         },
-        "attribution": {
-          "type": "string",
+        "_percentInviewVertical": {
+          "type": "number",
           "required": false,
-          "default": "",
-          "inputType": "Text",
-          "validators": [],
-          "help": "Text to be displayed as an attribution",
-          "translatable": true
+          "default": 50,
+          "isSetting": true,
+          "title": "Percent in view",
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "Controls what percentage of the component's height needs to be in the viewport in order for the CSS class(es) to be added."
         }
       }
     },
-    "mobileBody": {
+    "_extensions": {
+      "type": "object"
+    },
+    "themeSettings": {
+      "type": "object"
+    },
+    "properties" : {
+      "type": "object"
+    },
+    "_colorLabel": {
       "type": "string",
       "required": false,
-      "default": "",
-      "inputType": "TextArea",
-      "validators": [],
-      "help": "This body text is displayed on mobile devices when this component turns into a Narrative",
-      "translatable": true
-    },
-    "mobileInstruction": {
-      "type": "string",
-      "required": false,
-      "default": "",
-      "inputType": "TextArea",
-      "validators": [],
-      "help": "This instruction text is displayed on mobile devices when this component turns into a Narrative",
-      "translatable": true
-    },
-    "_hidePagination": {
-      "type": "boolean",
-      "required": true,
-      "default": false,
-      "title": "Hide pagination",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If enabled, the progress indicator and previous and next links will not be shown on the popup toolbar"
-    },
-    "_canCycleThroughPagination": {
-      "type": "boolean",
-      "required": true,
-      "default": false,
-      "title": "Cycle through item pagination",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If enabled, the popup navigation buttons will cycle continuously through the popup items (i.e. clicking next whilst on the last item will cause the first item to be shown."
-    },
-    "_isNarrativeOnMobile": {
-      "type": "boolean",
-      "required": true,
-      "default": true,
-      "title": "Render as Narrative on mobile?",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If disabled, the Hotgraphic will render a scaled down 'desktop' version (pins over image / tiles) of the component in 'mobile' view instead of being replaced by a Narrative interaction."
-    },
-    "_useNumberedPins": {
-      "type": "boolean",
-      "required": true,
-      "default": false,
-      "title": "Use numbered pins",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If enabled, the pin icons will be replaced with the item number. Useful if you want pins to be visited in a set order or show steps in a process."
-    },
-    "_useGraphicsAsPins": {
-      "type": "boolean",
-      "required": true,
-      "default": false,
-      "title": "Use graphics as pins",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If enabled, the main graphic will be hidden and pins will be displayed as images which can be positioned using classes"
-    },
-    "_isRound": {
-      "type": "boolean",
-      "required": false,
-      "default": false,
-      "title": "Should item image be round?",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "If enabled, a 50% border radius will be applied to the items pop up images."
-    },
-    "_items": {
-      "type": "array",
-      "required": true,
-      "title": "Hot Graphic Pins",
-      "items": {
-        "type": "object",
-        "required": true,
-        "properties": {
-          "title": {
-            "type": "string",
-            "required": true,
-            "default": "",
-            "inputType": "Text",
-            "validators": [],
-            "help": "Title displayed in the popup",
-            "translatable": true
-          },
-          "_ariaLevel": {
-            "type": "number",
-            "required": true,
-            "default": 0,
-            "title": "Title level",
-            "inputType": "Number",
-            "validators": ["required", "number"],
-            "help": "ARIA level to assign to the popup title. Leave set to 0 to default to the Notify ARIA level (set via the Accessibility section of the course configuration)."
-          },
-          "body": {
-            "type": "string",
-            "required": true,
-            "default": "",
-            "inputType": "TextArea",
-            "validators": ["required"],
-            "help": "Body text displayed in the popup",
-            "translatable": true
-          },
-          "strapline": {
-            "type": "string",
-            "required": true,
-            "default": "",
-            "inputType": "Text",
-            "validators": ["required"],
-            "help": "Strapline - displayed on mobile version only",
-            "translatable": true
-          },
-          "_graphic": {
-            "type": "object",
-            "required": true,
-            "title": "Item Graphic",
-            "properties": {
-              "src": {
-                "type": "string",
-                "required": true,
-                "default": "",
-                "inputType": "Asset:image",
-                "validators": ["required"],
-                "help": "Image to be displayed in a popup when this item is selected."
-              },
-              "alt": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "title": "Alternative text",
-                "inputType": "Text",
-                "validators": [],
-                "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
-                "translatable": true
-              },
-              "attribution": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "inputType": "Text",
-                "validators": [],
-                "help": "Text to be displayed as an attribution for the popup image",
-                "translatable": true
-              },
-              "_classes": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "title": "Graphic Classes",
-                "inputType": "Text",
-                "validators": [],
-                "help": "Allows you to specify custom CSS classes to be applied to the hotgraphic pin or, alternatively, to the hotspot tile when _useGraphicsAsPins is set to true"
-              }
-            }
-          },
-          "_pin": {
-            "type": "object",
-            "required": false,
-            "title": "Item Pin",
-            "properties": {
-              "src": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "inputType": "Asset:image",
-                "validators": [] ,
-                "help": "This is the pin image, leave blank for default"
-              },
-              "alt": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "inputType": "Text",
-                "validators": [],
-                "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
-                "translatable": true
-              }
-            }
-          },
-          "_classes": {
-            "type": "string",
-            "required": false,
-            "default": "",
-            "title": "Item Popup Classes",
-            "inputType": "Text",
-            "validators": [],
-            "help": "Allows you to specify custom CSS classes to be applied to the popup item. Supported classes are 'align-image-left', 'hide-desktop-image', and 'hide-popup-image' which aligns the item image to the left, hides the pop up image in desktop view, and hides the pop up image for all screen sizes respectively."
-          },
-          "_left": {
-            "type": "number",
-            "required": true,
-            "default": 0,
-            "title": "Pin Position - Left",
-            "inputType": "Number",
-            "validators": ["required", "number"],
-            "help": "Left position of pin"
-          },
-          "_top": {
-            "type": "number",
-            "required": true,
-            "default": 0,
-            "title": "Pin Position - Top",
-            "inputType": "Number",
-            "validators": ["required", "number"],
-            "help": "Top position of pin"
-          }
-        }
-      }
+      "editorOnly": true
     }
   }
 }
