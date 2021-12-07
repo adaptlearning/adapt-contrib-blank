@@ -10,6 +10,14 @@
       "enum": ["full-width", "half-width", "both"],
       "default": "both",
       "editorOnly": true
-    }
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
   }
 }
