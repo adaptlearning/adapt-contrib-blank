@@ -31,15 +31,6 @@
         "title": "Classes",
         "help": "Used to style or manipulate the look and feel of this Component. These are predefined in the theme or added in Project Settings > Custom CSS/Less code."
       },
-      "_isOptional": {
-        "type": "boolean",
-        "default": false,
-        "isSetting": true,
-        "inputType": "Checkbox",
-        "validators": [],
-        "title": "Is this optional?",
-        "help": "An optional component does not have to be completed by the user."
-      },
       "_isAvailable": {
         "type": "boolean",
         "default": true,
