@@ -20,6 +20,39 @@
           "_adapt": {
             "editorOnly": true
           }
+        },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "default": "Untitled",
+          "_adapt": {
+            "translatable": false
+          }
+        },
+        "displayTitle": {
+          "type": "string",
+          "title": "Display title",
+          "description": "When viewing an element - this is the title that will be displayed on the page",
+          "default": "",
+          "_adapt": {
+            "translatable": false
+          },
+          "_backboneForms": {
+            "type": "DisplayTitle",
+            "showInUi": false
+          }
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "default": "",
+          "_adapt": {
+            "translatable": false
+          },
+          "_backboneForms": {
+            "type": "TextArea",
+            "showInUi": false
+          }
         }
       }
     }
