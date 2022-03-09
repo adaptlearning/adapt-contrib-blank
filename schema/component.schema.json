@@ -27,9 +27,6 @@
           "default": "Untitled",
           "_adapt": {
             "translatable": false
-          },
-          "_backboneForms": {
-            "showInUi": false
           }
         },
         "displayTitle": {
@@ -54,6 +51,17 @@
           },
           "_backboneForms": {
             "type": "TextArea",
+            "showInUi": false
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          },
+          "_backboneForms": {
             "showInUi": false
           }
         }
