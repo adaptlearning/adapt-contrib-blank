@@ -21,14 +21,6 @@
             "editorOnly": true
           }
         },
-        "title": {
-          "type": "string",
-          "title": "Title",
-          "default": "Untitled",
-          "_adapt": {
-            "translatable": false
-          }
-        },
         "displayTitle": {
           "type": "string",
           "title": "Display title",
