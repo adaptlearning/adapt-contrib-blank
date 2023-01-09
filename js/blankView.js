@@ -8,7 +8,7 @@ export default class BlankView extends ComponentView {
 
   postRender() {
     this.setReadyStatus();
-    this.setCompletionStatus();
+    this.setupInviewCompletion();
   }
 
 }
