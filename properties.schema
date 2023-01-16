@@ -10,6 +10,11 @@
       "enum": ["full-width", "half-width", "both"],
       "default": "both",
       "editorOnly": true
-    }
+    },
+    "_isOptional": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    },
   }
 }
