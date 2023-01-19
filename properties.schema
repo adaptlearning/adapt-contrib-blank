@@ -14,7 +14,8 @@
     "_isOptional": {
       "type": "boolean",
       "required": false,
-      "default": true
+      "default": true,
+      "editorOnly": true
     }
   }
 }
