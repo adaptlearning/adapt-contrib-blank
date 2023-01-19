@@ -10,15 +10,15 @@
       "enum": ["full-width", "half-width", "both"],
       "default": "both",
       "editorOnly": true
-    },
-    "_isOptional": {
-      "type": "boolean",
-      "default": "true",
-      "isSetting": true,
-      "inputType": "Checkbox",
-      "validators": [],
-      "title": "Is this optional? New",
-      "help": "An optional component does not have to be completed by the user."
     }
+  },
+  "_isOptional": {
+    "type": "boolean",
+    "default": "true",
+    "isSetting": true,
+    "inputType": "Checkbox",
+    "validators": [],
+    "title": "Is this optional? upper",
+    "help": "An optional component does not have to be completed by the user."
   }
 }
