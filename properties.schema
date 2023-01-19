@@ -13,9 +13,12 @@
     },
     "_isOptional": {
       "type": "boolean",
-      "required": false,
       "default": true,
-      "editorOnly": true
+      "isSetting": true,
+      "inputType": "Checkbox",
+      "validators": [],
+      "title": "Is this hidden?",
+      "help": "Enabling this is equivalent to applying the CSS 'display:none' to the component. 1"
     }
   }
 }
