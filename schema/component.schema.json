@@ -14,7 +14,7 @@
           "isSetting": true,
           "inputType": "Checkbox",
           "validators": [],
-          "title": "Is this optional? Old",
+          "title": "Is this optional?",
           "help": "An optional component does not have to be completed by the user."
         },
         "_supportedLayout": {
