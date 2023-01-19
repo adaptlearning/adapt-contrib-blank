@@ -4,20 +4,13 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties": {
-    "_supportedLayout": {
-      "type": "string",
-      "required": true,
-      "enum": ["full-width", "half-width", "both"],
-      "default": "both",
-      "editorOnly": true
-    },
     "_isOptional": {
       "type": "boolean",
       "default": true,
       "isSetting": true,
       "inputType": "Checkbox",
       "validators": [],
-      "title": "Is this optional? properties.schema > properties",
+      "title": "Is this optional? settings.schema > properties",
       "help": "An optional component does not have to be completed by the user.",
       "editorOnly": true
     }
@@ -29,7 +22,7 @@
       "isSetting": true,
       "inputType": "Checkbox",
       "validators": [],
-      "title": "Is this optional? properties.schema > settings",
+      "title": "Is this optional? settings.schema > settings",
       "help": "An optional component does not have to be completed by the user.",
       "editorOnly": true
     }
