@@ -43,8 +43,7 @@ The attributes listed below are used in *components.json* to configure **Blank**
 No known limitations.
 
 ----------------------------
-**Version number:**  4.0.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>
-**Framework versions:** 5.19.1+
+<a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>
 **Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-blank/graphs/contributors)
 **Accessibility support:** n/a
 **RTL support:** n/a
