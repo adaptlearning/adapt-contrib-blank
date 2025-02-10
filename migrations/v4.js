@@ -3,7 +3,7 @@ import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, u
 describe('adapt-contrib-blank - v2.0.0 > v4.1.3', async () => {
   let blanks;
 
-  whereFromPlugin('adapt-contrib-blank - from v2.0.0', { name: 'adapt-contrib-blank', version: '<=4.1.3' });
+  whereFromPlugin('adapt-contrib-blank - from v2.0.0', { name: 'adapt-contrib-blank', version: '<4.1.3' });
 
   whereContent('adapt-contrib-blank - where blank', async content => {
     blanks = content.filter(({ _component }) => _component === 'blank');
