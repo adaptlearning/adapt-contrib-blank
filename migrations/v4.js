@@ -7,7 +7,7 @@ describe('adapt-contrib-blank - v2.0.0 > v4.1.3', async () => {
 
   whereContent('adapt-contrib-blank - where blank', async content => {
     blanks = content.filter(({ _component }) => _component === 'blank');
-    if (blanks) return true;
+    return blanks.length
   });
 
   /**
