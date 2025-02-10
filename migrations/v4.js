@@ -26,5 +26,5 @@ describe('adapt-contrib-blank - v2.0.0 > v4.1.3', async () => {
     return true;
   });
 
-  updatePlugin('adapt-contrib-blank - update to v4.1.3', { name: 'adapt-contrib-blank', version: '4.1.3', framework: '>=4' });
+  updatePlugin('adapt-contrib-blank - update to v4.1.3', { name: 'adapt-contrib-blank', version: '4.1.3', framework: '>=5.19.1' });
 });
