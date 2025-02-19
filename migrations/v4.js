@@ -1,18 +1,15 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-describe('adapt-contrib-blank - v2.0.0 > v4.1.3', async () => {
+describe('adapt-contrib-blank - v4.1.2 > v4.1.3', async () => {
   let blanks;
 
-  whereFromPlugin('adapt-contrib-blank - from v2.0.0', { name: 'adapt-contrib-blank', version: '<4.1.3' });
+  whereFromPlugin('adapt-contrib-blank - from v4.1.2', { name: 'adapt-contrib-blank', version: '<4.1.3' });
 
   whereContent('adapt-contrib-blank - where blank', async content => {
     blanks = content.filter(({ _component }) => _component === 'blank');
     return blanks.length;
   });
 
-  /**
-   * * Add JSON field to component and set attribute.
-   */
   mutateContent('adapt-contrib-blank - add blank._isOptional', async () => {
     blanks.forEach(blank => {
       blank._isOptional = true;
