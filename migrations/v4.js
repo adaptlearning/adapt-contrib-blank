@@ -1,4 +1,4 @@
-import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, getComponents } from 'adapt-migrations';
 
 describe('adapt-contrib-blank - v4.1.2 > v4.1.3', async () => {
   let blanks;
@@ -6,7 +6,7 @@ describe('adapt-contrib-blank - v4.1.2 > v4.1.3', async () => {
   whereFromPlugin('adapt-contrib-blank - from v4.1.2', { name: 'adapt-contrib-blank', version: '<4.1.3' });
 
   whereContent('adapt-contrib-blank - where blank', async content => {
-    blanks = content.filter(({ _component }) => _component === 'blank');
+    blanks = getComponents('blank');
     return blanks.length;
   });
 
