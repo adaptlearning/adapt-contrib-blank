@@ -1,4 +1,4 @@
-import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, getComponents } from 'adapt-migrations';
+import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, getComponents, testStopWhere, testSuccessWhere } from 'adapt-migrations';
 
 describe('adapt-contrib-blank - v4.1.2 > v4.1.3', async () => {
   let blanks;
@@ -24,4 +24,18 @@ describe('adapt-contrib-blank - v4.1.2 > v4.1.3', async () => {
   });
 
   updatePlugin('adapt-contrib-blank - update to v4.1.3', { name: 'adapt-contrib-blank', version: '4.1.3', framework: '>=5.19.1' });
+
+  testSuccessWhere('correct version with blank components', {
+    fromPlugins: [{ name: 'adapt-contrib-blank', version: '4.1.2' }],
+    content: [{ _component: 'blank' }]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-blank', version: '4.1.3' }]
+  });
+
+  testStopWhere('no blank components', {
+    fromPlugins: [{ name: 'adapt-contrib-blank', version: '4.1.2' }],
+    content: [{ _type: 'course' }]
+  });
 });
